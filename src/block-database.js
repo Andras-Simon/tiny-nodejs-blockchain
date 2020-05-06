@@ -3,6 +3,9 @@ const fs = require('fs');
 module.exports = class BlockDatabase {
     constructor(filename = 'data/chain.json') {
         this.filename = filename;
+        if(!fs.existsSync(filename)) {
+            fs.writeFileSync(filename, '[]');
+        }
         this.blocks = JSON.parse(fs.readFileSync(filename)) || [];
     }
 
@@ -16,6 +19,6 @@ module.exports = class BlockDatabase {
     }
 
     getHeight() {
-        return this.blocks.length + 1;
+        return this.blocks.length;
     }
 }
