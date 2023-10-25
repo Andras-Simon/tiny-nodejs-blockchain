@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/Andras-Simon/tiny-nodejs-blockchain#readme",
   "dependencies": {
-    "crypto-js": "^4.0.0"
+    "crypto-js": "^4.2.0"
   }
 }
